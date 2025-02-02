@@ -1,0 +1,25 @@
+{
+    "title": "Okto SDK",
+    "pages": [
+      "---Basics---",
+      "index",
+      "quickstart",
+      "introduction-to-okto",
+      "developer-admin-dashboard",
+      "---APIs and SDKs---",
+      "[Client APIs](https://docs.okto.tech/api-docs)",
+      "[Server APIs](https://docs.okto.tech/server-api-docs)",
+      "sdk-overview",
+      "react-sdk",
+      "flutter-sdk",
+      "react-native-sdk",
+      "unity-sdk",
+      "rate-limit",
+      "---Resources---",
+      "brand-kit",
+      "faq",
+      "[Showcase](https://docs.okto.tech/showcase)",
+      "[Advanced Dev Helper Tools](https://docs.okto.tech/tools)"
+    ],
+    "root": true
+  }

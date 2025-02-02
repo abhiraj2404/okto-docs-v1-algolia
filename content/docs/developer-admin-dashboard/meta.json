@@ -1,0 +1,15 @@
+{
+    "title": "Dashboard",
+    "pages": [
+      "overview",
+      "dashboard-account",
+      "okto-environments",
+      "api-key",
+      "ui-customizations",
+      "wallet-control",
+      "sponsorship",
+      "user-order-logs"
+    ],
+    "icon": "Shield",
+    "root": true
+  }

@@ -1,0 +1,33 @@
+---
+title: Prerequisites
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+### Setup and Configuration
+
+1. **React and Dependencies**
+   - Ensure you have React set up in your project.
+   - For a detailed list of required dependencies, refer to our [`package.json`](https://github.com/okto-hq/okto-sdk-react-template-app/blob/main/package.json).
+
+2. **Okto API Key**
+   - Obtain your API Key from the [Okto Dashboard](https://dashboard.okto.tech/).
+   - This key is essential for integrating the Okto SDK into your project.
+
+3. **Authentication Methods**
+
+   The Okto SDK supports multiple authentication methods:
+
+   - **Google OAuth**
+      - To authenticate users via Google, you'll need to set up a Google Console Project.
+      - Follow our guide to [set up your Google Console Project](/docs/react-sdk/authenticate-users/google-oauth/learn).
+   - [**Email OTP**](/docs/react-sdk/authenticate-users/email-otp/learn)
+   - [**Phone OTP**](/docs/react-sdk/authenticate-users/phone-otp/learn)
+
+<Callout title="Environment Configuration">
+By default, your project will use the **Sandbox** environment. To switch to the **Production** environment, please refer to our [Admin Panel documentation](/docs/developer-admin-dashboard/overview) for upgrade instructions.
+</Callout>
+
+### Next Steps
+
+Once you've completed these prerequisites, you'll be ready to integrate the Okto SDK into your React project. If you encounter any issues during setup, please consult our troubleshooting guide or reach out to our support team.

@@ -1,0 +1,84 @@
+---
+title: Overview
+description: Learn how to use the Okto Admin Panel in detail so you can get started with building in Okto in no time!
+full: false
+---
+
+import TechnologyCard from "app/components/mdx/TechnologyCard";
+import { 
+  LuUsers, 
+  LuNetwork,
+  LuKey, 
+  LuPaintbrush, 
+  LuWallet,
+  LuCircleDollarSign,
+  LuClipboardList
+} from "react-icons/lu";
+
+## Okto Admin Panel
+
+The Okto Admin Panel is a powerful, user-friendly interface designed to help you manage and monitor your Okto integration. It serves as a central hub for controlling various aspects of your application's interaction with the Okto platform, from user management to transaction monitoring and customization.
+
+### Key features of the Okto Admin Panel include:
+
+* User management and analytics  
+* Transaction monitoring and control  
+* Customization options for your Okto integration  
+* API key management  
+* Wallet controls for chains and tokens  
+* Sponsorship management for gas fees
+
+## **Discover Okto Dashboard**
+
+Explore our documentation to learn about the Okto Dashboard and its features. Here are some highlights from each section of the docs:
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
+    <TechnologyCard 
+        icon={<LuUsers size={"1.5rem"}/>}
+        title="Dashboard Account" 
+        subtitle="Set up and manage your Okto Dashboard Account"
+        link="./dashboard-account"
+    />
+
+    <TechnologyCard 
+        icon={<LuNetwork size={"1.5rem"}/>}
+        title="Okto Environments" 
+        subtitle="Learn about sandbox and production environments"
+        link="./okto-environments/sandbox"
+    />
+
+    <TechnologyCard 
+        icon={<LuKey size={"1.5rem"}/>}
+        title="API Keys" 
+        subtitle="Manage and generate API keys for your integration"
+        link="./api-key"
+    />
+
+    <TechnologyCard 
+        icon={<LuPaintbrush size={"1.5rem"}/>}
+        title="Customization" 
+        subtitle="Adjust UI themes to match your brand identity"
+        link="./ui-customizations/overview"
+    />
+
+    <TechnologyCard 
+        icon={<LuWallet size={"1.5rem"}/>}
+        title="Chains & Tokens" 
+        subtitle="Enable and manage blockchain networks for users"
+        link="./wallet-control"
+    />
+
+    <TechnologyCard 
+        icon={<LuCircleDollarSign size={"1.5rem"}/>}
+        title="Sponsorship" 
+        subtitle="Set up and manage gas fee sponsorship for users"
+        link="./sponsorship/overview"
+    />
+
+    <TechnologyCard 
+        icon={<LuClipboardList size={"1.5rem"}/>}
+        title="User Logs" 
+        subtitle="View detailed logs of user activity and transactions"
+        link="./user-order-logs/user-log"
+    />
+</div>

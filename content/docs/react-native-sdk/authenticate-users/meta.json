@@ -1,0 +1,12 @@
+{
+    "title": "Authenticate Your Users",
+    "pages": [
+      "!learn",
+      "google-oauth",
+      "phone-otp",
+      "email-otp",
+      "onboarding-modal",
+      "!other-social-auth",
+      "login-logout"
+    ]
+  }

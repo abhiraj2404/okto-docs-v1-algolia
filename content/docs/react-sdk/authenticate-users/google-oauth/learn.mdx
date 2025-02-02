@@ -1,0 +1,59 @@
+---
+title: Learn 
+full: false
+---
+
+This document describes the authentication flow when using Google OAuth and the Okto React SDK. Learn how to implement secure user authentication using Google's OAuth 2.0 system integrated with Okto SDK.
+
+## What is Google OAuth Authentication?
+
+Google OAuth 2.0 is an industry-standard protocol for authorization that enables applications to obtain limited access to user accounts on Google services. When using Okto with Google Authentication, you get:
+
+- Secure user authentication using Google's trusted infrastructure
+- Access to user profile information (email, name, profile picture)
+- Simplified sign-up/sign-in process for users
+- Cross-platform compatibility
+- Built-in security features like token encryption and automatic session management
+
+## Implementation Overview
+
+To implement Google Authentication in your application, you'll need to complete these steps:
+
+
+1. **[Set up Google Console Project](./google-console-setup)**
+2. **[Obtain Google ID Token](./get-token-id)**
+3. **[Authenticate with Okto:](./auth-user-via-code)** 
+   - Use the ID token with Okto SDK
+   - Pass the token to Okto's authentication method
+   - Handle authentication response
+   - Manage user session
+
+## Authentication Flow
+
+### Sequence Diagram
+
+![Auth Sequence Diagram](/images/google-auth-sequence-diagram.png)
+
+The sequence diagram illustrates the following steps:
+
+### 1. Client Invokes Google Login
+The user's login process begins when the vendor's client web app invokes Google Login by sending a request to the Google OAuth server.
+### 2. Google OAuth Server Returns ID Token
+Upon successful login, the Google OAuth server generates and sends an `id_token` to the client app, confirming the user's identity.
+### 3. Client Invokes Okto React SDK Authentication
+The client app then calls the `authenticate` method of the Okto React SDK, passing the `id_token` received from Google.
+### 4. Okto React SDK Passes ID Token to Okto Servers
+The Okto React SDK forwards the ID token to the Okto servers for verification.
+### 5. Okto Servers Verify the ID Token
+The Okto servers verify the validity of the ID token:
+- If the token is verified successfully, the Okto servers check if a user exists with the email associated with the ID token.
+- If the user exists, the process continues.
+- If the user does not exist, a new user is created.
+- If verification fails, the process ends with an error
+### 6. Okto Servers Send Okto Auth Token
+Once the ID token is verified and user creation or validation is complete, the Okto servers generate and send an Okto authentication token to the Okto React SDK.
+### 7. Okto React SDK Returns Auth Token or Error to Client
+The Okto React SDK returns the Okto authentication token to the client web app. If an error occurred during verification, the SDK returns an error instead.
+
+## Conclusion
+This authentication flow ensures a secure and streamlined process by combining Google OAuth with Okto’s infrastructure. After the user successfully logs in with Google, Okto handles the verification and user management, returning a unique authentication token to the client. This token can be used to grant access to protected resources or services, all while maintaining user security and a seamless experience.

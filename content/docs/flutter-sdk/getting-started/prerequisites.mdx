@@ -1,0 +1,42 @@
+---
+title: Prerequisites
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+### Setup and Configuration
+
+1. **Flutter and Dependencies**
+   - Ensure you have Flutter installed and set up.
+   - For a detailed list of required dependencies, refer to our [`pubspec.yaml`](https://github.com/okto-hq/okto-sdk-flutter-template-app/blob/main/pubspec.yaml).
+
+2. **Okto API Key**
+   - Obtain your API Key from the [Okto Dashboard](https://dashboard.okto.tech/).
+   - This key is essential for integrating the Okto SDK into your project.
+
+3. **Authentication Methods**
+
+   The Okto SDK supports multiple authentication methods:
+
+      i. **Google Client IDs**
+         - To authenticate users via Google, you'll need to set up a Google Console Project.
+         - Follow our guide to [set up your Google Console Project](/docs/flutter-sdk/authenticate-users/google-oauth/google-console-setup).
+         - The required Client IDs depend on your target platforms:
+
+         | Target Platform | Required Client IDs |
+         |-----------------|---------------------|
+         | Android only    | - Android Client ID<br/>- Web Client ID |
+         | iOS only        | - iOS Client ID |
+         | Both Android and iOS | - Android Client ID<br/>- iOS Client ID<br/>- Web Client ID |
+      
+      ii. [**Email OTP**](/docs/flutter-sdk/authenticate-users/email-otp/learn)
+
+      iii. [**Phone OTP**](/docs/flutter-sdk/authenticate-users/phone-otp/learn)
+
+<Callout title="Environment Configuration">
+By default, your project will use the **Sandbox** environment. To switch to the **Production** environment, please refer to our [Admin Panel documentation](/docs/developer-admin-dashboard/overview) for upgrade instructions.
+</Callout>
+
+### Next Steps
+
+Once you've completed these prerequisites, you'll be ready to integrate the Okto SDK into your Flutter project. If you encounter any issues during setup, please consult our troubleshooting guide or reach out to our support team.

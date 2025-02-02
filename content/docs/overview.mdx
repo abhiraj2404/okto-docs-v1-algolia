@@ -1,0 +1,109 @@
+---
+title: Overview
+description: ✦ Welcome to Okto’s documentation ✦ Get started with Okto SDK in
+  your project. Learn the basics, explore how Okto works, and find helpful
+  resources to build and improve your app. We're here to guide you from your
+  first steps to creating amazing Web3 experiences.
+full: false
+icon: Star
+---
+
+import DocCard from "../../app/components/mdx/DocCard";
+import TechnologyCard from "../../app/components/mdx/TechnologyCard";
+import SDKCard from "../../app/components/mdx/SDKCard";
+import Footer from "../../app/components/Footer";
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { FaReact } from "react-icons/fa6";
+import { MessageSquareText, MousePointer2 } from 'lucide-react';
+import { TbBrandReactNative, TbApi } from "react-icons/tb";
+import { SiFlutter } from "react-icons/si";
+import { LuLayoutDashboard, LuSettings, LuBookOpen } from "react-icons/lu";
+import { IoDocumentOutline } from "react-icons/io5";
+
+## How to Get Started?
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
+  <TechnologyCard
+      icon={<FaReact size={"3rem"} />}
+      title="React"
+      subtitle="for web"
+      link="/docs/react-sdk"
+  />
+
+  <TechnologyCard
+      icon={<TbBrandReactNative size={"3rem"} />}
+      title="React Native"
+      subtitle="for mobile"
+      link="/docs/react-native-sdk"
+  />
+
+  <TechnologyCard
+      icon={<SiFlutter size={"3rem"} />}
+      title="Flutter"
+      subtitle="for Android and iOS"
+      link="/docs/flutter-sdk"
+  />
+
+  <TechnologyCard 
+      icon={<TbApi size={"3rem"} />}
+      title="API"
+      subtitle="for server and client"
+      link="/api-docs"
+  />
+</div>
+
+
+## What is Okto SDK?
+
+Okto SDK provides developers with a fast and seamless way to build on Web3. It offers interoperable embedded wallets, enabling a Web2-like user experience while onboarding users to Web3 effortlessly. 
+
+With Okto SDK, developers can transform their Web2 applications into Web3-powered platforms in just a few steps, without compromising user-friendliness. This powerful toolkit simplifies cross-chain interactions and ensures a smooth transition for both developers and users, accelerating Web3 adoption and integration.
+
+## Learn More 
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 lg:gap-8">
+  <TechnologyCard 
+      icon={<IoDocumentOutline size={"1.5rem"}/>}
+      title="Introduction to Okto"
+      subtitle="Quickstart guides and tutorials"
+      link="/docs/introduction-to-okto/okto-universe"
+  />
+
+  <TechnologyCard 
+      icon={<LuLayoutDashboard size={"1.5rem"}/>}
+      title="Using dashboard" 
+      subtitle="Customize your onboarding UI" 
+      link="https://dashboard.okto.tech/"
+  />
+
+  <TechnologyCard 
+      icon={<MousePointer2 size={"1.5rem"}/>}
+      title="Interactive demo" 
+      subtitle="Experience features in real-time" 
+      link="https://demo.okto.tech/"
+  />
+
+   <TechnologyCard 
+      icon={<MessageSquareText size={"1.5rem"}/>}
+      title="Join community" 
+      subtitle="Connect with developers on Discord" 
+      link="https://discord.com/invite/okto-916349620383252511"
+  />
+ 
+</div>
+
+## FAQs
+
+<Accordions>
+<Accordion title="Why Okto?">
+ You can integrate Okto SDK intro mobile app & web apps to add web3 functionality to your app without building things from scratch.
+</Accordion>
+
+<Accordion title="How to customise UI?">
+  You can integrate Okto SDK intro mobile app & web apps to add web3 functionality to your app without building things from scratch.
+</Accordion>
+
+<Accordion title="What can I build with Okto?">
+  You can integrate Okto SDK intro mobile app & web apps to add web3 functionality to your app without building things from scratch.
+</Accordion>
+</Accordions>

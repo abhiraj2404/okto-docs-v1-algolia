@@ -1,0 +1,9 @@
+{
+    "title": "Quickstart",
+    "pages": [
+        "../react-sdk/getting-started/new-okto-react-setup",
+        "../react-native-sdk/getting-started/new-okto-react-native-setup",
+        "../flutter-sdk/getting-started/new-okto-flutter-setup"
+    ],
+    "icon": "Rocket"
+}

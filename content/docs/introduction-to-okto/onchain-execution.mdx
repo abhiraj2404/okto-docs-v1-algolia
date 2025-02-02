@@ -1,0 +1,97 @@
+---
+title: Onchain Execution
+description: Learn about on-chain execution using Okto.
+full: false
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+## What is an Order?
+
+In the Okto ecosystem, an "order” is a request or instruction to perform a specific action on the blockchain.
+
+### Examples of orders:
+- Transferring tokens
+- Interacting with a smart contract
+- Executing any blockchain-based transaction
+
+Under the hood, each order consists of several components that manage the entire transaction lifecycle across various chains.
+
+When an order is initiated, it goes through several states—each representing a stage of the transaction lifecycle. The order also has a unique **order ID** that links to other components such as job IDs and transaction hashes, which track the execution process.
+
+## Transaction Lifecycle in Okto
+
+The transaction lifecycle in Okto follows a specific flow, marked by different **order states**. Each state reflects the status of the transaction at a given point, providing insight into its execution.
+
+### Order States 
+
+Throughout its lifecycle, an order can be in one of several states. The main states are explained below:
+
+1. **Running**: When the transaction is initiated, it enters the **Running** state. In this state, the transaction is being processed and validated on the blockchain.
+   
+2. **Failed**: If any error occurs during the execution (e.g., insufficient funds, network issues), the transaction moves to the **Failed** state. The order may be retried or flagged for further investigation.
+
+3. **Successful**: Upon completion, the transaction enters the **Successful** state, indicating that the action has been executed on the blockchain, and the desired outcome has been achieved.
+
+### State Transition Times
+
+The state transitions depend on network conditions, and the estimated time for each state can vary based on the chain. For example:
+- **EVM Chains (Ethereum, Polygon):** Transaction time can range from a few seconds to a few minutes.
+- **Solana:** Transactions are typically confirmed in a few seconds.
+- **Aptos:** Confirmation times are generally very fast, often under a second.
+
+<Callout title="Note">
+These are estimates and can vary based on network conditions.
+</Callout>
+
+#### State Transition Diagram
+
+![State Transition Diagram](/images/state-transition-diagram.png)
+
+## **Understanding Order IDs and Transaction Hashes**
+
+Okto uses a system of identifiers to track and manage transactions efficiently. Here's what you need to know:
+
+### **Order ID**
+
+* Represents a single order (e.g., a token transfer or contract call)  
+* Each order corresponds to one or more jobs
+
+### **Job ID**
+
+* A sub-task within an order  
+* Each job may represent a step or part of the overall order
+
+### **Bulk Order ID**
+
+* Used when multiple orders are processed together  
+* A bulk order consists of multiple individual orders grouped for efficiency
+
+### **Transaction Hash**
+
+* The unique identifier produced by the blockchain when a transaction is executed  
+* A single bulk order may result in multiple transaction hashes
+
+### **Relationship between IDs:**
+
+* Order ID : Job ID \= 1 : n (One order can have multiple jobs)  
+* Bulk Order ID : Transaction Hash \= 1 : n (One bulk order can result in multiple transaction hashes)
+
+This structure allows Okto to efficiently track and manage multiple transactions and ensure that each step of the process is monitored accurately.
+
+## **Order Types**
+
+Okto classifies orders into different types based on the actions they perform. This classification helps in managing and tracking various kinds of blockchain interactions.
+
+Common order types include:
+
+1. **Token Transfer**: Moving tokens from one address to another  
+2. **Smart Contract Interaction**: Executing functions on smart contracts  
+3. **NFT Minting**: Creating new NFTs on the blockchain  
+4. **DeFi Orders**: Actions related to liquidity provision, staking, or other DeFi operations
+
+Each order type is identified at the time of creation and affects the subsequent flow through the order states. By classifying the orders, Okto can provide tailored management and tracking mechanisms for different transaction types.
+
+## **Conclusion**
+
+In Okto, an order is more than just a transaction—it is a lifecycle-managed process with multiple states, tracked through various IDs. Understanding the relationship between **Order ID**, **Job ID**, **Bulk Order ID**, and **Transaction Hash**, along with the classification of order types, helps developers efficiently manage transactions on the Okto platform.

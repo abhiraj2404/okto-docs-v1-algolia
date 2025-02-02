@@ -1,0 +1,104 @@
+---
+title: Key Management
+description: Overview of Account Abstraction (AA) wallet creation, primary and secondary signers, policy engine, and security mechanisms like MPC and 2FA in Okto’s ecosystem.
+full: false
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+## Overview
+
+Okto employs cutting-edge cryptographic techniques to manage user keys securely across multiple blockchain networks. Our approach is built on several key principles:
+1. Support for Account Abstraction (AA) across various chains
+2. Flexible primary and secondary signer system
+3. Advanced security through Multi-Party Computation (MPC)
+4. Robust policy engine for transaction management
+
+Let's dive deeper into each of these components.
+
+## Supported Chains and Account Abstraction (AA) Wallet Creation
+Okto supports a variety of blockchain networks, including:
+- EVM Chains (Ethereum, Polygon, BNB Chain, etc.)
+- Solana
+- Aptos
+
+Here's how we create and manage Account Abstraction (AA) wallets for these chains:
+1. **EVM Chains**: For Ethereum-based chains, AA wallets are created by deploying smart contracts that manage the user’s assets. This smart contract-based wallet can handle gas fees, token transfers, and interactions with dApps in a secure and efficient manner.
+2. **Solana and Aptos**: In Solana and Aptos, wallets are created using the respective native key pair generation methods, integrated with Okto’s system for seamless interaction across chains.
+
+## Primary and Secondary Signers
+
+### Primary Signer
+
+The primary signer is typically the most trusted party (e.g., the user) and is decided based on the user's key that controls most interactions with the wallet. This signer has the highest level of control.
+
+### Secondary Signer
+
+The secondary signer is created as a fallback and can be a separate key or device that provides an additional layer of security. It can act as a recovery option or for multi-signature transactions.
+
+### Future Scope
+Okto is continually working to improve our key management system. Future updates may include:
+- Optimized multi-signature setups
+- New recovery methods
+- Advanced cryptographic techniques for enhanced security
+- Decentralized governance mechanisms for AA wallets
+
+### Revoking Primary Access
+
+Users can revoke primary signer access through Okto’s wallet management interface. By initiating a request from their device, the user can remove the primary signer's permissions and promote another key to primary status.
+
+<Callout title="Note">
+For more detailed information on signer assignment, please refer to our [Signer Assignment Spreadsheet](https://docs.google.com/spreadsheets/d/18RMLphO3ykFKnaPq9a4YqWG4GDugPO3CX5fBluGohR0/edit?usp=sharing).
+</Callout>
+
+## Multi-Party Computation (MPC) and 3+0 Signing
+
+### MPC and 3+0 Signing
+
+Okto uses Multi-Party Computation (MPC) for distributed key management. This advanced cryptographic technique ensures that no single party has full control over the private key, significantly enhancing security.
+
+Okto implements a **3+0 signing** mechanism, where the signing authority is distributed across three parties:
+1. Okto
+2. The Vendor
+3. The User
+
+This distribution ensures that no single party has full control over the private keys and that even if one party is compromised, the user’s assets remain secure
+
+### Power Distribution in the Okto Ecosystem
+1. **Okto**: Provides the infrastructure, wallet creation, and management services. It does not have direct control over the user's assets but ensures security and policy enforcement.
+2. **Vendor**: The Vendor integrates Okto’s wallet services within their application. Vendors can initiate actions on behalf of the user but do not control the user's assets directly.
+3. **User**: Retains control over their assets, with the ability to sign transactions and manage their wallets through Okto’s app.
+
+### Self-Custody and Privacy
+Okto’s MPC-based system ensures true self-custody and privacy:
+- **Vendors** cannot directly access or control a user's private keys or funds. They act as intermediaries between the user and the Okto platform.
+- **Users** maintain self-custody of their assets through MPC, ensuring that neither Okto nor the Vendor can control their funds. Privacy is guaranteed through cryptographic protections.
+
+## Policy Engine
+
+Okto's Policy Engine is a crucial component in managing user keys and transactions. It acts as a guard rail, ensuring that all actions within the Okto ecosystem adhere to predefined rules and permissions.
+
+### Policy Enforcement in Okto
+The Policy Engine:
+- Defines rules and permissions for different actions across the platform
+- Manages how and when transactions can be executed based on predefined policies set by both Okto and the Vendor.
+
+### Authentication Levels
+To provide flexible security options, Okto supports multiple authentication levels:
+1. **1FA (One-Factor Authentication)**: By default, Okto uses one-factor authentication for secure access to wallets and transactions.
+2. **2FA (Two-Factor Authentication)**: Users and Vendors can enable 2FA to add an additional layer of security. Vendors can prompt users to enable 2FA through their app, while users can activate it directly within the Okto app settings.
+
+## App Intent and Policy Breaking
+
+To maintain flexibility while ensuring security, Okto allows for policy breaking through app intents:
+- Vendors can trigger app intents to break or bypass certain policy restrictions defined by the Policy Engine.
+- For example, to break a policy restricting transactions without 2FA, the Vendor can redirect the user to the Okto app to complete the required action.
+- This mechanism ensures compliance with policy rules while offering seamless user experiences.
+
+## Conclusion
+
+Okto's key management system is designed to provide maximum security while maintaining flexibility and ease of use. By implementing Account Abstraction, Multi-Party Computation, and a robust Policy Engine, we ensure that users have control over their assets while benefiting from the seamless experience of our platform.
+
+Whether you're a developer integrating Okto or an end-user, you can trust that your keys and assets are managed with the highest standards of security and privacy. As we continue to evolve our system, we remain committed to the principles of self-custody and user empowerment in the blockchain ecosystem.
+
+For any questions or further clarification, please don't hesitate to reach out to our support team or consult our additional documentation resources.

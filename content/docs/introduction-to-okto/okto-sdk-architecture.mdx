@@ -1,0 +1,62 @@
+---
+title: SDK Architecture
+description: In-depth guide to Okto React SDK architecture, its unique wallet structure, and key considerations for implementation.
+full: false
+---
+
+## Overview
+
+The Okto React SDK is designed to abstract away the complexities of blockchain interactions, allowing developers to focus on building great user experiences. Let's dive into the key components and considerations of the SDK architecture.
+
+## Wallet Structure
+The Okto SDK uses a unique wallet structure to manage transactions and interactions across different blockchains. Here are the main components:
+
+### 1. Central Wallets for Each Chain
+- **Purpose**: Act as the main point for transaction facilitation on each supported blockchain.
+- **Function**: Handle all transactions related to a particular chain.
+- **Benefit**: Abstracts complexity from end-users, who don't need to manage multiple wallets.
+
+### 2. Sponsor Wallets
+- **Purpose**: Cover transaction costs, particularly gas fees, on behalf of users.
+- **Function**: Pay necessary fees, allowing users to interact with dApps without worrying about maintaining token balances for gas.
+- **Benefit**: Enables seamless transactions, improving user experience.
+
+### 3. Nonce Wallets (Specific to Solana)
+- **Purpose**: Manage the nonce (sequence number) for Solana-based operations.
+- **Function**: Prevent replay attacks and ensure the integrity of sequential operations on the Solana blockchain.
+- **Benefit**: Adds an extra layer of security for Solana transactions.
+
+### What This Means for Vendors
+
+As a vendor using the Okto SDK, you don't need to worry about directly managing addresses on the blockchain. Instead, you'll interact with these central, sponsor, and nonce wallets through the SDK's abstracted interfaces. This separation of concerns allows you to focus on your application logic while Okto handles the complexities of blockchain interactions.
+
+## Key Considerations for Using the Okto SDK
+When implementing the Okto SDK in your project, keep these points in mind:
+- **Transaction Management**: You should be aware of the different wallet types and the role they play in the transaction flow. Always ensure proper handling of sponsor wallets, particularly for gas-related operations, to avoid failed transactions.
+- **Nonce Management**: For Solana, it's important to correctly manage nonce values when dealing with transaction sequences. The SDK provides tools to assist with this, but careful attention is needed to avoid conflicts.
+- **Chain-specific Behavior**: Different chains have their unique transaction requirements. Ensure your implementation accounts for these chain-specific behaviors when deploying your app on multiple blockchains.
+
+## Supported Frameworks
+
+The Okto React SDK currently supports the following frameworks:
+- **React**: Full support for React.js applications, enabling seamless integration of Okto’s wallet functionality into existing React projects.
+- **Next.js**: Support for Next.js, including server-side rendering considerations for wallet functionality.
+
+We're continuously working on extending support to other frameworks. Check our documentation regularly for updates on compatibility with frameworks like Vue.js and Angular.
+
+## Deploying Smart Contracts
+
+As of now, you will need to deploy your own smart contracts on the respective blockchains. While Okto provides wallet and transaction facilitation, the responsibility of deploying and maintaining your contracts remains with you.
+
+## Benefits of the Okto SDK Architecture
+1. **Simplified Wallet Management**: No need to handle complex wallet creation and management processes.
+2. **Abstracted Chain Interaction**: Interact with multiple blockchains through a unified interface.
+3. **Reduced Development** Time: Focus on your app's unique features instead of blockchain intricacies.
+4. **Enhanced Security**: Leverage Okto's secure wallet structure without implementing it yourself.
+5. **Flexible Integration**: Easily integrate blockchain functionality into existing React and Next.js projects.
+
+## Conclusion
+
+The Okto React SDK architecture is designed to simplify blockchain interactions for developers. By abstracting away the complexities of wallet management and chain-specific behaviors, it allows you to build powerful, blockchain-enabled applications more efficiently.
+
+Understanding the underlying architecture, particularly the central, sponsor, and nonce wallets, is key to effectively leveraging the SDK in your project. As support for more frameworks and contract deployments evolves, Okto aims to further streamline the dApp development process. As you develop with Okto, don't hesitate to refer back to this guide and our other documentation resources.

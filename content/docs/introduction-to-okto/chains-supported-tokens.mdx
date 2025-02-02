@@ -1,0 +1,136 @@
+---
+title: Chains / Tokens
+description: Overview of supported chains, wallet structure, testnet availability, and token whitelisting in Okto’s ecosystem.
+full: false
+---
+
+import SupportedChainCard from "../../../app/components/mdx/SupportedChainCard";
+
+## Supported Chains
+
+<SupportedChainCard
+  chainIcon="/images/polygon-logo.svg"
+  chainName="Polygon"
+  tokens={[
+    { name: "POL (Native)", icon: "/images/polygon-logo.svg" },
+    { name: "USDT (Default)", icon: "/images/usdt-icon.svg" },
+    { name: "USDC (Default)", icon: "/images/usdc-icon.svg" },
+  ]}
+  whitelistNote="For EVM chains, any ERC20 token can be whitelisted by contacting the team."
+  resources={{
+    "Solidity": "https://soliditylang.org/",
+    "Remix": "https://remix.ethereum.org/",
+    "Hardhat": "https://hardhat.org/",
+    "OpenZeppelin": "https://www.openzeppelin.com/",
+  }}
+  supportedTestnet={{
+    "Polygon Amoy testnet": "https://amoy.polygonscan.com/",
+  }}
+  networkInfo={[
+    {
+      name: "Polygon Mainnet",
+      confirmations: "7",
+      blockInterval: "2.3s",
+    },
+    {
+      name: "Polygon Amoy testnet",
+      confirmations: "1",
+      blockInterval: "3s",
+    },
+  ]}
+/>
+<br/>
+<SupportedChainCard
+  chainIcon="/images/sol-icon.svg"
+  chainName="Solana"
+  tokens={[
+    { name: "SOL (Native)", icon: "/images/sol-icon.svg" },
+    { name: "USDT (Default)", icon: "/images/usdt-icon.svg" },
+    { name: "USDC (Default)", icon: "/images/usdc-icon.svg" },
+  ]}
+  whitelistNote="For Solana, any SPL token can be whitelisted by contacting the team."
+  resources={{
+    "Solana Docs": "https://solana.com/docs",
+    "Rust": "https://www.rust-lang.org/",
+    "Anchor": "https://www.anchor-lang.com/",
+    "Solana Playground": "https://beta.solpg.io/",
+  }}
+  supportedTestnet={{
+    "Solana Devnet": "https://explorer.solana.com/?cluster=devnet",
+  }}
+  networkInfo={[
+    {
+      name: "Solana Mainnet",
+      confirmations: "1",
+      blockInterval: "0.4s",
+    },
+    {
+      name: "Solana Devnet",
+      confirmations: "1",
+      blockInterval: "0.4s",
+    },
+  ]}
+/>
+<br/>
+<SupportedChainCard
+  chainIcon="/images/base-icon.svg"
+  chainName="Base"
+  tokens={[
+    { name: "ETH (Native)", icon: "/images/eth-icon.svg" },
+    { name: "USDC (Default)", icon: "/images/usdc-icon.svg" },
+  ]}
+  whitelistNote="For EVM chains, any ERC20 token can be whitelisted by contacting the team."
+  resources={{
+    "Solidity": "https://soliditylang.org/",
+    "Remix": "https://remix.ethereum.org/",
+    "Hardhat": "https://hardhat.org/",
+    "OpenZeppelin": "https://www.openzeppelin.com/",
+  }}
+  supportedTestnet={{
+    "No Supported Testnet": "#",
+  }}
+  networkInfo={[
+    {
+      name: "Base Mainnet",
+      confirmations: "1",
+      blockInterval: "2s",
+    },
+  ]}
+/>
+<br/>
+<SupportedChainCard
+  chainIcon="/images/aptos-icon.svg"
+  chainName="Aptos"
+  tokens={[
+    { name: "APTOS (Native)", icon: "/images/aptos-icon.svg" },
+    { name: "USDC (Default)", icon: "/images/usdc-icon.svg" },
+  ]}
+  whitelistNote="For Aptos, any fungible asset can be whitelisted by contacting the team."
+  resources={{
+    "Aptos Docs": "https://aptos.dev/en",
+    "Move": "https://aptos.dev/en/build/smart-contracts",
+    "Aptos CLI": "https://aptos.dev/en/build/cli",
+    "Aptos SDK": "https://aptos.dev/en/build/sdks",
+  }}
+  supportedTestnet={{
+    "Aptos Testnet": "https://explorer.aptoslabs.com/?network=testnet",
+  }}
+  networkInfo={[
+    {
+      name: "Aptos Mainnet",
+      confirmations: "1",
+      blockInterval: "4s",
+    },
+    {
+      name: "Aptos Testnet",
+      confirmations: "1",
+      blockInterval: "4s",
+    },
+  ]}
+/>
+
+## Conclusion
+
+Remember to always check the latest information for each chain you're working with, as capabilities and token support may evolve over time. If you have any questions about a specific chain or token, don't hesitate to reach out to our support team.
+
+For further information on managing chain environments, please refer to the [Admin Panel Documentation](/docs/developer-admin-dashboard/overview).

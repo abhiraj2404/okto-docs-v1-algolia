@@ -1,0 +1,15 @@
+{
+    "title": "Using Embedded Wallet",
+    "pages": [
+        "get-embedded-wallet-details",
+        "get-user-details",
+        "get-user-balance-portfolio",
+        "transfer-tokens",
+        "!using-nfts-okto-lite",
+        "transfer-nfts",
+        "raw-transactions",
+        "read-contract-data",
+        "!read-any-chain-data",
+        "!read-from-any-contract"
+    ]
+  }

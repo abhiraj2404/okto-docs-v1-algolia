@@ -1,0 +1,16 @@
+{
+  "title": "React",
+  "pages": [
+    "index",
+    "getting-started",
+    "using-react-features",
+    "sdk-functions",
+    "chains-tokens",
+    "authenticate-users",
+    "okto-embedded-wallet",
+    "example-apps",
+    "!migration-to-okto",
+    "troubleshooting-faq"
+  ],
+  "root": true
+}
